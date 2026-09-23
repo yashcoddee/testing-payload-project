@@ -49,8 +49,13 @@ export const Image: React.FC<MediaProps> = (props) => {
 
     const filename = fullFilename
 
-    src = `${process.env.SERVER_URL}${url}`
+    console.log('ENV:', process.env.NEXT_PUBLIC_SERVER_URL);
+    console.log('ENV:', process.env.NEXT_PUBLIC_SERVER_URL);
+
+    src = `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
   }
+
+  console.log('IMAGE SRC:', src);
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
   const sizes = sizeFromProps
@@ -79,4 +84,5 @@ export const Image: React.FC<MediaProps> = (props) => {
       width={!fill ? width || widthFromProps : undefined}
     />
   )
+  
 }
